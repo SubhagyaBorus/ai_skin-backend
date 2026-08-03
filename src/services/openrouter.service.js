@@ -47,10 +47,33 @@ Calculate:
 
 overallScore = average of all individual scores.
 
-Determine:
+Determine skin type ONLY if confidence is above 85%.
 
-- skinType
-- skinTone
+Otherwise return
+
+"skinType":"Unknown"
+
+Never label skin as acne-prone unless visible acne lesions are clearly present.
+
+Never infer conditions from facial hair, beard, shadows, pores or lighting.
+
+Only recommend active ingredients that match visible concerns.
+
+If no significant concern exists, recommend only:
+
+• Gentle cleanser
+• Ceramide moisturizer
+• SPF sunscreen
+
+Do not recommend salicylic acid, benzoyl peroxide or adapalene unless acne is visibly present.
+
+Write a unique summary based only on this image.
+
+Do not reuse wording from previous analyses.
+
+For every concern include a visual reason.
+
+If there is no visual evidence, do not report the concern.
 
 Before returning the JSON:
 
