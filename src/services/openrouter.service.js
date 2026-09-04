@@ -245,7 +245,7 @@ async function analyseWithOpenRouter(base64Image) {
           "Content-Type": "application/json",
          
         },
-        timeout: 60000,
+        timeout: 120000,
       }
     );
 
