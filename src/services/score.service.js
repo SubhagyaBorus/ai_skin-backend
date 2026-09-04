@@ -1,63 +1,105 @@
 function getFallbackAnalysis() {
   return {
-    overallScore: 50,
-    skinType: 'Combination',
-    skinTone: 'Medium',
-    textureScore: 50,
-    hydrationScore: 50,
-    acneScore: 20,
-    wrinkleScore: 20,
-    darkCircleScore: 25,
-    poreScore: 40,
-    pigmentationScore: 30,
-    oilinessScore: 45,
-    sensitivityScore: 30,
-    summary: 'Fallback analysis (AI unavailable).',
-    concerns: ['Unable to analyze'],
-    strengths: ['General care recommended'],
-    recommendations: {
-      cleanser: 'Gentle cleanser',
-      serum: 'Basic serum',
-      moisturizer: 'Light moisturizer',
-      sunscreen: 'SPF 50',
-      nightCream: 'Basic night cream',
+    analysisVersion: "2.0",
+
+    confidence: 0,
+
+    faceDetected: false,
+
+    imageQuality: {
+      lighting: "Unknown",
+      sharpness: "Unknown",
+      visibility: "Unable to analyze",
     },
-    ingredients: ['Hyaluronic Acid'],
-    foodsToEat: ['Vegetables', 'Fruits'],
-    foodsToAvoid: ['Processed Sugar'],
-    dietPlan: {
-      breakfast: 'Oatmeal',
-      morningSnack: 'Fruit',
-      lunch: 'Salad',
-      eveningSnack: 'Nuts',
-      dinner: 'Grilled chicken',
-      waterIntake: '8 glasses',
-      supplements: 'Vitamin C',
+
+    overallScore: 0,
+
+    skinType: "Unknown",
+    skinTone: "Unknown",
+
+    scores: {
+      texture: 0,
+      hydration: 0,
+      acne: 0,
+      wrinkles: 0,
+      darkCircles: 0,
+      pores: 0,
+      pigmentation: 0,
+      oiliness: 0,
+      sensitivity: 0,
     },
-    exercisePlan: {
-      workoutType: 'Cardio',
-      duration: '30 min',
-      weeklyFrequency: '3 times',
-      exercises: ['Walking', 'Jogging', 'Cycling'],
-    },
-    dailyRoutine: {
-      morning: ['Cleanse', 'Moisturize', 'SPF'],
-      afternoon: ['Hydrate'],
-      night: ['Cleanse', 'Night cream'],
-    },
-    lifestyle: {
-      sleep: '8 hours',
-      stress: 'Meditate',
-      screenTime: 'Limit',
-      waterGoal: '8 glasses',
-      sunExposure: 'Use SPF',
-      tips: ['Stay hydrated', 'Eat healthy', 'Exercise regularly'],
-    },
-    weeklyGoals: ['Maintain routine'],
-    recommendedProducts: [
-      { category: 'Cleanser', name: 'Basic Cleanser', reason: 'General use' },
+
+    summary: "Skin analysis is currently unavailable.",
+
+    mainIssue: "Unable to analyze",
+
+    severity: "Unknown",
+
+    visibleFindings: [],
+
+    analysisLimitations: [
+      "AI analysis was unavailable.",
+      "No skin condition should be inferred without successful image analysis.",
     ],
+
+    concerns: [],
+
+    strengths: [],
+
+    recommendations: {
+      cleanser: "Unable to recommend without analysis.",
+      serum: "Unable to recommend without analysis.",
+      moisturizer: "Unable to recommend without analysis.",
+      sunscreen: "Use a broad-spectrum SPF 30+ sunscreen.",
+      nightCream: "Unable to recommend without analysis.",
+    },
+
+    recommendedIngredients: [],
+
+    avoidIngredients: [],
+
+    recommendedProducts: [],
+
+    foodsToEat: [],
+
+    foodsToAvoid: [],
+
+    dietPlan: {
+      breakfast: "Unable to generate personalized plan.",
+      morningSnack: "Unable to generate personalized plan.",
+      lunch: "Unable to generate personalized plan.",
+      eveningSnack: "Unable to generate personalized plan.",
+      dinner: "Unable to generate personalized plan.",
+      waterIntake: "Maintain normal hydration based on thirst and activity.",
+      supplements: "No personalized supplements recommended.",
+    },
+
+    exercisePlan: {
+      workoutType: "General physical activity",
+      duration: "As appropriate",
+      weeklyFrequency: "As appropriate",
+      exercises: [],
+    },
+
+    dailyRoutine: {
+      morning: [],
+      afternoon: [],
+      night: [],
+    },
+
+    lifestyle: {
+      sleep: "Maintain a regular sleep schedule.",
+      stress: "Use healthy stress-management techniques.",
+      screenTime: "Take regular breaks from screens.",
+      waterGoal: "Maintain adequate hydration.",
+      sunExposure: "Use sun protection when outdoors.",
+      tips: [],
+    },
+
+    weeklyGoals: [],
   };
 }
 
-module.exports = { getFallbackAnalysis };
+module.exports = {
+  getFallbackAnalysis,
+};
