@@ -6,5 +6,5 @@ console.log("MODEL FROM ENV:", process.env.OPENROUTER_MODEL);
 module.exports = {
   apiKey: process.env.OPENROUTER_API_KEY,
   model: process.env.OPENROUTER_MODEL,
-  baseUrl: "https://openrouter.ai/api/v1/chat/completions",
+  baseUrl: "https://api.deepseek.com/chat/completions",
 };

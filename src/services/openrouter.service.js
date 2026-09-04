@@ -47,33 +47,10 @@ Calculate:
 
 overallScore = average of all individual scores.
 
-Determine skin type ONLY if confidence is above 85%.
+Determine:
 
-Otherwise return
-
-"skinType":"Unknown"
-
-Never label skin as acne-prone unless visible acne lesions are clearly present.
-
-Never infer conditions from facial hair, beard, shadows, pores or lighting.
-
-Only recommend active ingredients that match visible concerns.
-
-If no significant concern exists, recommend only:
-
-• Gentle cleanser
-• Ceramide moisturizer
-• SPF sunscreen
-
-Do not recommend salicylic acid, benzoyl peroxide or adapalene unless acne is visibly present.
-
-Write a unique summary based only on this image.
-
-Do not reuse wording from previous analyses.
-
-For every concern include a visual reason.
-
-If there is no visual evidence, do not report the concern.
+- skinType
+- skinTone
 
 Before returning the JSON:
 
@@ -257,7 +234,7 @@ async function analyseWithOpenRouter(base64Image) {
       },
     ],
     temperature: 0.2,
-    max_tokens: 2000,
+    max_tokens: 2500,
   };
     const response = await axios.post(
       config.baseUrl,
@@ -266,8 +243,7 @@ async function analyseWithOpenRouter(base64Image) {
         headers: {
           Authorization: `Bearer ${config.apiKey}`,
           "Content-Type": "application/json",
-          "HTTP-Referer": "https://your-app.com",
-          "X-Title": "AI Skin Analyzer",
+         
         },
         timeout: 60000,
       }
